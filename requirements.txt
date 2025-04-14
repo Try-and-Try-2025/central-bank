@@ -1,0 +1,33 @@
+# basics
+cookiecutter
+make
+python-dotenv>=0.5.1
+scipy==1.15
+click
+loguru
+pretty-errors
+pathlib2
+
+
+
+# Documentation sphinx
+furo
+sphinx-book-theme
+sphinx
+sphinx-copybutton
+sphinx-last-updated-by-git
+sphinx-view
+sphinx_inline_tabs
+sphinxcontrib.bibtex
+sphinxcontrib.mermaid
+sphinx-autobuild
+sphinx_git
+sphinx-favicon
+nbsphinx
+pandoc
+wheel
+sphinx-simplepdf
+sphinxcontrib-youtube
+sphinxprettysearchresults
+sphinxcontrib-googleanalytics==0.4
+
