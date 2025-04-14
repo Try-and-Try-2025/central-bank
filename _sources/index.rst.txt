@@ -9,12 +9,12 @@ Welcome to the My Central Bank documentation
 
 .. toctree::
    :caption: Projects Presentations
-   :maxdepth: 2
+   :maxdepth: 1
 
-   docs/projects/index.rst
+   projects/index.rst
 
 .. toctree::
    :caption: Python
-   :maxdepth: 2   
+   :maxdepth: 1   
 
-   /docs/python/index.rst
+   python/index.rst
