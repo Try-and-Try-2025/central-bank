@@ -18,3 +18,10 @@ Welcome to the My Central Bank documentation
    :maxdepth: 1   
 
    python/index.rst
+
+
+.. toctree::
+   :caption: Tools
+   :maxdepth: 1   
+
+   tools/index.rst
