@@ -6,8 +6,8 @@ PYTHON_INTERPRETER = python3
 PYTHON_VERSION = 3.12
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = .
-BUILDDIR      = ./_build
+SOURCEDIR     = ./docs
+BUILDDIR      = ./docs/_build
 
 
 # echo colors
