@@ -1,6 +1,12 @@
 
 name: Deploy Documentation
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+
 on:
   push:
     branches: [ dev ]
