@@ -4,7 +4,13 @@ All the tools tips
 
 
 .. toctree::
-   :caption: Snowflake
-   :maxdepth: 3
+   :caption: Softwares
+   :maxdepth: 1
 
    snowflake.rst
+
+.. toctree::
+   :caption: Theorical courses
+   :maxdepth: 1
+
+   rag.rst

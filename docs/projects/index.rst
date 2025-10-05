@@ -5,6 +5,6 @@ Home
 
 .. toctree::
    :caption: Squeleton
-   :maxdepth: 3
+   :maxdepth: 1
 
    squeletons.rst

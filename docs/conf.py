@@ -135,7 +135,7 @@ simplepdf_vars = {
     # 'cover-overlay': 'rgba(26, 150, 26, 0.7)',
     # 'primary-opaque': 'rgba(26, 150, 26, 0.7)',
     "cover-bg": "url(cover-bg.jpg) no-repeat center",
-    "primary": "#28C6FF",
+    "primary": "#6353EE",
     "secondary": "#000000",
     "cover": "#ffffff",
     "white": "#ffffff",
