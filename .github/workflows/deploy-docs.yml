@@ -1,9 +1,15 @@
 
 name: Deploy Documentation
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+
 on:
   push:
-    branches: [ dev ]
+    branches: [ main ]
   pull_request:
 
 jobs:
@@ -34,7 +40,6 @@ jobs:
 
   deploy:
     needs: build
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     
     steps:

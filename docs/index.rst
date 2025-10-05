@@ -4,17 +4,24 @@ Welcome to the My Central Bank documentation
 ============================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
 .. toctree::
    :caption: Projects Presentations
    :maxdepth: 2
 
-   docs/projects/index.rst
+   projects/index.rst
 
 .. toctree::
    :caption: Python
    :maxdepth: 2   
 
-   /docs/python/index.rst
+   python/index.rst
+
+
+.. toctree::
+   :caption: Tools
+   :maxdepth: 2   
+
+   tools/index.rst

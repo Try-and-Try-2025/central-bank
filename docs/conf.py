@@ -7,7 +7,7 @@ from datetime import date
 
 # -- Project information -----------------------------------------------------
 
-project = "central_bank"
+project = "Central Bank"
 copyright = f'{date.today().year}, TnT'
 author = "TnT"
 
@@ -106,7 +106,7 @@ html_use_index = True
 
 
 # -- Options for LaTeX output --------------------------------
-title = "central_bank"  # \\newline\\newline\\large PDF Version"
+title = "Central Bank"  # \\newline\\newline\\large PDF Version"
 # The master toctree document.
 master_doc = "index"
 latex_theme = "manual"  # 'manual' to make a book, 'howto' to make an article
@@ -135,7 +135,7 @@ simplepdf_vars = {
     # 'cover-overlay': 'rgba(26, 150, 26, 0.7)',
     # 'primary-opaque': 'rgba(26, 150, 26, 0.7)',
     "cover-bg": "url(cover-bg.jpg) no-repeat center",
-    "primary": "#28C6FF",
+    "primary": "#6353EE",
     "secondary": "#000000",
     "cover": "#ffffff",
     "white": "#ffffff",
