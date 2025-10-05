@@ -1,0 +1,859 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../_static/_static/icon.svg" rel="icon" type="image/svg+xml">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXX');
+    </script>
+    <link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Modern Python CLI" href="uv_cli.html"><link rel="prev" title="Numba" href="numba.html">
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2025.09.25 -->
+        <title>Learn UV - Central Bank</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Central Bank</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">Central Bank</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Projects Presentations</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/index.html">Home</a><input aria-label="Toggle navigation of Home" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/squeletons.html">Squeleton</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">All Python Tips</a><input aria-label="Toggle navigation of All Python Tips" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="decouple.html">Python Decouple</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numba.html">Numba</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Learn UV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uv_cli.html">Modern Python CLI</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tools</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools/index.html">All the tools tips</a><input aria-label="Toggle navigation of All the tools tips" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/snowflake.html">Learn about SnowFlake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools/rag.html">Learn about RAG</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/python/uv_learn.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="learn-uv">
+<h1>Learn UV<a class="headerlink" href="#learn-uv" title="Link to this heading">¶</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Version<span class="colon">:</span></dt>
+<dd class="field-odd"><p>2025-10</p>
+</dd>
+</dl>
+<div class="important admonition">
+<p class="admonition-title">Objectives</p>
+<p>This article is intended to know all the basics command for uv, the modern Python package manager.
+It is not a complete documentation, but it will help you to get started with uv.
+You can find the complete documentation on the official website: <a class="reference external" href="https://uv.readthedocs">https://uv.readthedocs</a></p>
+</div>
+<section id="basics-commands-for-uv-for-your-daily-work-on-python-projects">
+<h2>Basics Commands for uv for your daily work on Python projects<a class="headerlink" href="#basics-commands-for-uv-for-your-daily-work-on-python-projects" title="Link to this heading">¶</a></h2>
+<p>uv is a modern Python package manager that simplifies the management of Python environments and dependencies. It is designed to be user-friendly and efficient, making it easier for developers to work with Python projects.</p>
+<ol class="arabic simple">
+<li><p>Installation of uv (if not already installed)</p></li>
+</ol>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Linux</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Powershell</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>powershell<span class="w"> </span>-ExecutionPolicy<span class="w"> </span>ByPass<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Start a new project with uv</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>init<span class="w"> </span>--package<span class="w"> </span>keyrus_tuto_uv
+</pre></div>
+</div>
+<p>A note that the <cite>uv init</cite> command creates a new directory named <cite>keyrus_tuto_uv</cite> and initializes a new uv project in it. You can replace <cite>keyrus_tuto_uv</cite> with any name you prefer for your project.</p>
+<p>Adding the <cite>–package</cite> option will allow you to directly create a Python package</p>
+<ol class="arabic simple" start="3">
+<li><p>Navigate to the project directory</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>keyrus_tuto_uv
+</pre></div>
+</div>
+<p>We can check the content of the project directory with the command: <code class="docutils literal notranslate"><span class="pre">tree</span></code>. You will see the following structure:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>pyproject.toml
+└──<span class="w"> </span>src
+<span class="w">    </span>└──<span class="w"> </span>keyrus_tuto_uv
+<span class="w">        </span>└──<span class="w"> </span>__init__.py
+
+<span class="m">3</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">3</span><span class="w"> </span>files
+</pre></div>
+</div>
+<p>and if you look at the <cite>pyproject.toml</cite>, you already have a very good starting point:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>pyproject.toml
+</pre></div>
+</div>
+<p>You should see:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>project<span class="o">]</span>
+<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;keyrus-tuto-uv&quot;</span>
+<span class="w"> </span><span class="nv">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span>
+<span class="w"> </span><span class="nv">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Add your description here&quot;</span>
+<span class="w"> </span><span class="nv">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="w"> </span><span class="nv">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">     </span><span class="o">{</span><span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Cao Tri DO&quot;</span>,<span class="w"> </span><span class="nv">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cao-tri.do@keyrus.com&quot;</span><span class="w"> </span><span class="o">}</span>
+<span class="w"> </span><span class="o">]</span>
+<span class="w"> </span>requires-python<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.12&quot;</span>
+
+<span class="w"> </span><span class="o">[</span>project.scripts<span class="o">]</span>
+<span class="w"> </span>keyrus-tuto-uv<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;keyrus_tuto_uv:main&quot;</span>
+
+<span class="w"> </span><span class="o">[</span>build-system<span class="o">]</span>
+<span class="w"> </span><span class="nv">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;uv_build&gt;=0.8.17,&lt;0.9.0&quot;</span><span class="o">]</span>
+<span class="w"> </span>build-backend<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;uv_build&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>To create a virtual environment, you can use the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>venv
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>To activate the virtual environment, use the command (the same as for venv).</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that it is not necessary to activate the virtual environment to install packages with uv because each command starting with <cite>uv</cite> will automatically use the virtual environment if it exists.</p>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>To install a package (e.g. pandas and streamlit), use the command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>scikit-learn<span class="w"> </span>loguru
+</pre></div>
+</div>
+<p>The packages will be both installed in the virtual environment and added to the <cite>pyproject.toml</cite> file. The <cite>uv.lock</cite> file will also be updated to reflect the installed packages and their versions.</p>
+<p>And to add packages only for development (dev), you can create a group:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span>dev<span class="w"> </span>pytest<span class="w"> </span>ruff
+</pre></div>
+</div>
+<p>and let’s create a group for testing purpose</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>add<span class="w"> </span>--group<span class="w"> </span><span class="nb">test</span><span class="w"> </span>pytest
+</pre></div>
+</div>
+<p>We can check the packages installed in the virtual environment with the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>pip<span class="w"> </span>list
+</pre></div>
+</div>
+<p>What is interesting with uv, is that it is possible to see the dependency tree of our installed packages. For this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>tree
+</pre></div>
+</div>
+<p>In our case, you will see the following output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>keyrus-tuto-uv<span class="w"> </span>v0.1.0
+├──<span class="w"> </span>pandas<span class="w"> </span>v2.3.0
+│<span class="w">   </span>├──<span class="w"> </span>numpy<span class="w"> </span>v2.3.1
+│<span class="w">   </span>├──<span class="w"> </span>python-dateutil<span class="w"> </span>v2.9.0.post0
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>six<span class="w"> </span>v1.17.0
+│<span class="w">   </span>├──<span class="w"> </span>pytz<span class="w"> </span>v2025.2
+│<span class="w">   </span>└──<span class="w"> </span>tzdata<span class="w"> </span>v2025.2
+└──<span class="w"> </span>streamlit<span class="w"> </span>v1.46.1
+<span class="w">    </span>├──<span class="w"> </span>altair<span class="w"> </span>v5.5.0
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>jinja2<span class="w"> </span>v3.1.6
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>markupsafe<span class="w"> </span>v3.0.2
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>jsonschema<span class="w"> </span>v4.24.0
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>attrs<span class="w"> </span>v25.3.0
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>jsonschema-specifications<span class="w"> </span>v2025.4.1
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>referencing<span class="w"> </span>v0.36.2
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>attrs<span class="w"> </span>v25.3.0
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">       </span>├──<span class="w"> </span>rpds-py<span class="w"> </span>v0.26.0
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>│<span class="w">       </span>└──<span class="w"> </span>typing-extensions<span class="w"> </span>v4.14.1
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>referencing<span class="w"> </span>v0.36.2<span class="w"> </span><span class="o">(</span>*<span class="o">)</span>
+<span class="w">    </span>│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>rpds-py<span class="w"> </span>v0.26.0
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>narwhals<span class="w"> </span>v1.45.0
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>packaging<span class="w"> </span>v25.0
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>typing-extensions<span class="w"> </span>v4.14.1
+<span class="w">    </span>├──<span class="w"> </span>blinker<span class="w"> </span>v1.9.0
+<span class="w">    </span>├──<span class="w"> </span>cachetools<span class="w"> </span>v6.1.0
+<span class="w">    </span>├──<span class="w"> </span>click<span class="w"> </span>v8.2.1
+<span class="w">    </span>├──<span class="w"> </span>gitpython<span class="w"> </span>v3.1.44
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>gitdb<span class="w"> </span>v4.0.12
+<span class="w">    </span>│<span class="w">       </span>└──<span class="w"> </span>smmap<span class="w"> </span>v5.0.2
+<span class="w">    </span>├──<span class="w"> </span>numpy<span class="w"> </span>v2.3.1
+<span class="w">    </span>├──<span class="w"> </span>packaging<span class="w"> </span>v25.0
+<span class="w">    </span>├──<span class="w"> </span>pandas<span class="w"> </span>v2.3.0<span class="w"> </span><span class="o">(</span>*<span class="o">)</span>
+<span class="w">    </span>├──<span class="w"> </span>pillow<span class="w"> </span>v11.3.0
+<span class="w">    </span>├──<span class="w"> </span>protobuf<span class="w"> </span>v6.31.1
+<span class="w">    </span>├──<span class="w"> </span>pyarrow<span class="w"> </span>v20.0.0
+<span class="w">    </span>├──<span class="w"> </span>pydeck<span class="w"> </span>v0.9.1
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>jinja2<span class="w"> </span>v3.1.6<span class="w"> </span><span class="o">(</span>*<span class="o">)</span>
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>numpy<span class="w"> </span>v2.3.1
+<span class="w">    </span>├──<span class="w"> </span>requests<span class="w"> </span>v2.32.4
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>certifi<span class="w"> </span>v2025.6.15
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>charset-normalizer<span class="w"> </span>v3.4.2
+<span class="w">    </span>│<span class="w">   </span>├──<span class="w"> </span>idna<span class="w"> </span>v3.10
+<span class="w">    </span>│<span class="w">   </span>└──<span class="w"> </span>urllib3<span class="w"> </span>v2.5.0
+<span class="w">    </span>├──<span class="w"> </span>tenacity<span class="w"> </span>v9.1.2
+<span class="w">    </span>├──<span class="w"> </span>toml<span class="w"> </span>v0.10.2
+<span class="w">    </span>├──<span class="w"> </span>tornado<span class="w"> </span>v6.5.1
+<span class="w">    </span>├──<span class="w"> </span>typing-extensions<span class="w"> </span>v4.14.1
+<span class="w">    </span>└──<span class="w"> </span>watchdog<span class="w"> </span>v6.0.0
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>To update the virtual environment with the latest versions of the packages, use the command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>sync
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A file uv.lock is created that contains the package on the system level</p>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>To remove a package (e.g. pandas), use the command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>remove<span class="w"> </span>pandas
+</pre></div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>To run a Python script (e.g. <cite>main.py</cite>), use the command:</p></li>
+</ol>
+<p>Let’s create a <cite>main.py</cite> file in <cite>src/main.py</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>src/main.py
+</pre></div>
+</div>
+<p>and let’s add a simple script to train a ML Classifier on Iris Dataset</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># main.py</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Loading the Iris dataset...&quot;</span><span class="p">)</span>
+    <span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Splitting into train/test sets...&quot;</span><span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+    <span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Initializing RandomForest model...&quot;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Training the model...&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Evaluating the model...&quot;</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+    <span class="n">logger</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test accuracy: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;train.log&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s2">&quot;1 MB&quot;</span><span class="p">,</span> <span class="n">retention</span><span class="o">=</span><span class="s2">&quot;7 days&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Starting training script.&quot;</span><span class="p">)</span>
+    <span class="n">main</span><span class="p">()</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Training script finished.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then you can run the script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>src/main.py
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>To run a script with a specific package only for this run, use the command <cite>uv run –with</cite>:</p></li>
+</ol>
+<p>For example, let’s remove loguru</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>remove<span class="w"> </span>loguru
+</pre></div>
+</div>
+<p>if we run the code: <cite>uv run src/main.py</cite>, we will obtain an error:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ctdo@ZL008776:~/tmp/keyrus_tuto_uv<span class="w"> </span>git:<span class="o">(</span>HEAD<span class="o">)</span>&gt;<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>src/main.py
+Traceback<span class="w"> </span><span class="o">(</span>most<span class="w"> </span>recent<span class="w"> </span>call<span class="w"> </span>last<span class="o">)</span>:
+File<span class="w"> </span><span class="s2">&quot;/home/ctdo/tmp/keyrus_tuto_uv/src/main.py&quot;</span>,<span class="w"> </span>line<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="k">in</span><span class="w"> </span>&lt;module&gt;
+<span class="w">    </span>from<span class="w"> </span>loguru<span class="w"> </span>import<span class="w"> </span>logger
+ModuleNotFoundError:<span class="w"> </span>No<span class="w"> </span>module<span class="w"> </span>named<span class="w"> </span><span class="s1">&#39;loguru&#39;</span>
+</pre></div>
+</div>
+<p>To run this script with loguru, you can use <cite>uv run –with</cite></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>loguru<span class="w"> </span>src/main.py
+</pre></div>
+</div>
+<p>This should work again !!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to run with a group, for example, <cite>test</cite>, you can do</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--group<span class="w"> </span>pytest
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="11">
+<li><p>Finally, to delete the environment, just delete the <cite>.venv/</cite> folder</p></li>
+</ol>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Linux</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>-rf<span class="w"> </span>.venv
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Powershell</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remove-Item<span class="w"> </span>.<span class="se">\.</span>venv<span class="se">\</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="advanced-commands">
+<h2>Advanced Commands<a class="headerlink" href="#advanced-commands" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>To commit properly, use commitizen:</p></li>
+</ol>
+<p>Let’s add all our new file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>commitizen<span class="w"> </span>cz<span class="w"> </span>c
+</pre></div>
+</div>
+<p>and let’s put the commit message</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>feat:<span class="w"> </span>initial<span class="w"> </span>commit
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Build a package</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>build
+</pre></div>
+</div>
+<p>This command will create a <cite>dist</cite> directory containing the built package files.</p>
+<ol class="arabic simple" start="2">
+<li><p>Publish a package</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>publish
+</pre></div>
+</div>
+<p>This command will publish the package to the Python Package Index (PyPI) or any other specified repository.</p>
+<ol class="arabic simple" start="3">
+<li><p>To bump the version of your package (tag):</p></li>
+</ol>
+<p>let’s add this to your <cite>pyproject.toml</cite></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>tool.commitizen<span class="o">]</span>
+<span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cz_conventional_commits&quot;</span>
+<span class="nv">version_provider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pep621&quot;</span>
+<span class="nv">tag_format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;v</span><span class="nv">$version</span><span class="s2">&quot;</span>
+<span class="nv">version_files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="s2">&quot;pyproject.toml:^version =&quot;</span>,
+<span class="s2">&quot;VERSION&quot;</span>
+<span class="o">]</span>
+<span class="nv">bump_message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;chore(release): bump version </span><span class="nv">$current_version</span><span class="s2"> → </span><span class="nv">$new_version</span><span class="s2"> [skip ci]&quot;</span>
+<span class="nv">update_changelog_on_bump</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">changelog_incremental</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">pre_bump_hooks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span>
+<span class="w">    </span><span class="s2">&quot;uv sync&quot;</span>,
+<span class="w">    </span><span class="s2">&quot;git add uv.lock&quot;</span>
+<span class="o">]</span>
+<span class="nv">changelog_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;CHANGELOG.md&quot;</span>
+<span class="nv">changelog_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;# Changelog \\n\\nAll notable changes to this project will be documented in this file.\n\nThe format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),\nand this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).\\n\\n## [Unreleased]\\n&quot;</span>
+<span class="nv">changelog_message_template</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">## {{version}} - {{date}}</span>
+
+<span class="s2">{{#each commits}}</span>
+<span class="s2">- {{message}}</span>
+<span class="s2">{{/each}}</span>
+
+<span class="s2">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>and let’s create a <cite>VERSION</cite> file with version 0.1.0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0.1.0&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>VERSION
+</pre></div>
+</div>
+<p>Then, you can use the command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>commitizen<span class="w"> </span>cz<span class="w"> </span>bump
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>To make a digest of your code (all your code in one .md file):</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>gitingest<span class="w"> </span>gitingest<span class="w"> </span>.
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>To run the ds-make squeleton from the DS team:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>cookiecutter<span class="w"> </span>cookiecutter<span class="w"> </span>git@gitlab.com:keyrus-data/infra/cookiecutter-data-squeleton.git<span class="w"> </span>--directory<span class="o">=</span><span class="s2">&quot;data-science-v2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="link-to-our-squeleton">
+<h2>Link to our squeleton<a class="headerlink" href="#link-to-our-squeleton" title="Link to this heading">¶</a></h2>
+<p>And if you don’t want to retain all of these commands, you can put everything in a Makefile:</p>
+<ol class="arabic simple">
+<li><p>Create a Makefile:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>Makefile
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Add this template for Makefile</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source for a good Python Makefile: https://gist.github.com/genyrosk/2a6e893ee72fa2737a6df243f6520a6d</span>
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># GLOBALS                                                                       #</span>
+<span class="c1">#################################################################################</span>
+
+PROJECT_DIR<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="k">$(</span>shell<span class="w"> </span>dirname<span class="w"> </span><span class="k">$(</span>realpath<span class="w"> </span><span class="k">$(</span>lastword<span class="w"> </span><span class="k">$(</span>MAKEFILE_LIST<span class="k">))))</span>
+
+-include<span class="w"> </span>.env
+<span class="nb">export</span>
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># HELP (default) - shows all available make commands</span>
+<span class="c1">#################################################################################</span>
+.PHONY:<span class="w"> </span><span class="nb">help</span><span class="w"> </span>.env
+help:<span class="w"> </span>.env
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;Available commands:&quot;</span>
+<span class="w">        </span>@grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^[a-zA-Z_-]+:.*?## &#39;</span><span class="w"> </span>Makefile<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;BEGIN {FS = &quot;:.*?## &quot;}; {printf &quot;  \033[36m%-15s\033[0m %s\n&quot;, $$1, $$2}&#39;</span>
+
+.DEFAULT_GOAL<span class="w"> </span>:<span class="o">=</span><span class="w"> </span><span class="nb">help</span>
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># PROJECT RULES                                                                 #</span>
+<span class="c1">#################################################################################</span>
+.PHONY:<span class="w"> </span>run_app<span class="w"> </span>run<span class="w"> </span>run_api
+
+run:<span class="w"> </span><span class="c1">## Run the script demo</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Run the Script demo</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>uv<span class="w"> </span>run<span class="w"> </span>src/main.py
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># COMMANDS (INSTALL / SETUP)                                                    #</span>
+<span class="c1">#################################################################################</span>
+.PHONY:<span class="w"> </span>dev-install<span class="w"> </span>prod-install
+
+dev-install:<span class="w"> </span><span class="c1">## Install Python Dependencies (Dev)</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Install Python Dependencies (Dev)</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>uv<span class="w"> </span>sync<span class="w"> </span>--dev
+
+prod-install:<span class="w"> </span><span class="c1">## Install Python Dependencies (Prod)</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Install Python Dependencies (Dev)</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>uv<span class="w"> </span>sync
+
+clean:<span class="w"> </span><span class="c1">## Delete all compiled Python files</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Delete all compiled Python files</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.py[co]&quot;</span><span class="w"> </span>-delete
+<span class="w">        </span>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;__pycache__&quot;</span><span class="w"> </span>-delete
+<span class="w">        </span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.egg-info&#39;</span><span class="w">  </span>-type<span class="w"> </span>d<span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span><span class="o">{}</span><span class="w"> </span>+
+<span class="w">        </span>rm<span class="w"> </span>-rf<span class="w"> </span>.venv/
+<span class="w">        </span>rm<span class="w"> </span>-rf<span class="w"> </span>_artifact/<span class="w"> </span>.devbox/<span class="w"> </span>.pytest_cache/<span class="w"> </span>.ruff_cache/<span class="w"> </span>node_modules/
+<span class="w">        </span>rm<span class="w"> </span>.coverage<span class="w"> </span>package.json<span class="w"> </span>package-lock.json<span class="w"> </span>digest.txt<span class="w"> </span>zz_git-diff.txt
+
+uv-install:<span class="w"> </span><span class="c1">## Install uv</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Install uv</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://astral.sh/uv/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;Note: restart your terminal or run: source ~/.bashrc or source ~/.zshrc&quot;</span>
+
+install:<span class="w"> </span>uv-install<span class="w"> </span><span class="c1">## Install uv</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Initiating isolated shell dev environment</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>devbox<span class="w"> </span>shell
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># COMMANDS (CODE QUALITY &amp; BUILD)                                               #</span>
+<span class="c1">#################################################################################</span>
+.PHONY:<span class="w"> </span>qa_lines_count<span class="w"> </span><span class="nb">test</span><span class="w"> </span>pc
+
+qa_lines_count:<span class="w"> </span><span class="c1">## Code quality: count nb lines in each *.py files</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Count the number of lines in each *.py script</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>@find<span class="w"> </span>./src<span class="w"> </span>./tests<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.py&#39;</span><span class="w"> </span>-exec<span class="w">  </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="se">\</span>
+<span class="w">            </span><span class="s1">&#39;{printf &quot;%4s %s\n&quot;, $$1, $$2}{s+=$$0}END{print s}&#39;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s1">&#39;&#39;</span>
+
+test:<span class="w"> </span><span class="c1">## Run unit test and coverage</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Run unit test and coverage</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>uv<span class="w"> </span>run<span class="w"> </span>--group<span class="w"> </span><span class="nb">test</span><span class="w"> </span>pytest<span class="w"> </span>--cov<span class="w"> </span>src/<span class="k">$(</span>PACKAGE_NAME<span class="k">)</span><span class="w"> </span>--cov-report<span class="o">=</span>html:_artifact/coverage_re<span class="w"> </span>--cov-report<span class="o">=</span>term-missing<span class="w"> </span>--cov-config<span class="o">=</span>.coveragerc
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;Note: you can open the HTML report with: open _artifact/coverage_re/index.html&quot;</span>
+<span class="w">        </span>@echo
+
+pc:<span class="w"> </span><span class="c1">## Run pre-commit hooks</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Run pre-commit rules</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>@pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+
+bump:<span class="w"> </span><span class="c1">## Bump the version using commitizen</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Bump the version using commitizen</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>@uv<span class="w"> </span>run<span class="w"> </span>cz<span class="w"> </span>bump
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;Note: don&#39;t forget to push the new tag to the remote repo with: git push --tags&quot;</span>
+
+commit:<span class="w"> </span><span class="c1">## Commit your changes using commitizen</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Commit your changes using commitizen</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>@uv<span class="w"> </span>run<span class="w"> </span>cz<span class="w"> </span>commit
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># UTILITIES                                                                 #</span>
+<span class="c1">#################################################################################</span>
+.PHONY:<span class="w"> </span>pipreqs<span class="w"> </span>generate_docs<span class="w"> </span>create-env-template
+
+<span class="c1">## Generate a requirements-tmp.txt file from the src/ folder</span>
+pipreqs:
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Generate a requirements-tmp.txt file from the src/ folder</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>@uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>pipreqs<span class="w"> </span>pipreqs<span class="w"> </span>src/<span class="w"> </span>--savepath<span class="w"> </span>requirements-tmp.txt
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;List of the standard packages used in the code&quot;</span>
+<span class="w">        </span>@cat<span class="w"> </span>requirements-tmp.txt
+
+mr-desc:<span class="w"> </span><span class="c1">## Get the git diff between main and dev branches and save it to a file</span>
+<span class="w">        </span>git<span class="w"> </span>diff<span class="w"> </span>main<span class="w"> </span>dev<span class="w"> </span>&gt;<span class="w"> </span>zz_git-diff.txt
+
+digest-code:<span class="w"> </span><span class="c1">## Create a unique .md file from all the repo codes</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Create a unique .md file from all the repo codes</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>uv<span class="w"> </span>run<span class="w"> </span>--with<span class="w"> </span>gitingest<span class="w"> </span>gitingest<span class="w"> </span>.
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># Self Documenting Commands                                                     #</span>
+<span class="c1">#################################################################################</span>
+.PHONY:<span class="w"> </span>help_setup
+
+<span class="c1">## Initial setup to follow</span>
+help_setup:
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>ccso<span class="k">)</span><span class="s2">--&gt; Initial setup to follow</span><span class="k">$(</span>ccend<span class="k">)</span><span class="s2">&quot;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;1. Install Devbox, uv and docker&quot;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;2. Start a new isolated shell using: devbox shell&quot;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;3. Install all the required Dependencies using uv sync or make dev-install&quot;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;4. Run the app using: make run (script) or make run_app (streamlit app) or make run_api (FastAPI server)&quot;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;5. Alternatively, you can run all the application using docker-compose: docker-compose up --build or make start&quot;</span>
+<span class="w">        </span>@echo<span class="w"> </span><span class="s2">&quot;6. (optional) clean your environment using: make clean&quot;</span>
+<span class="w">        </span>@echo
+
+
+<span class="c1">#################################################################################</span>
+<span class="c1"># ENV CHECK &amp; CONFIGURATION                                                     #</span>
+<span class="c1">#################################################################################</span>
+
+<span class="c1"># Colors for echos</span>
+<span class="nv">ccend</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span>tput<span class="w"> </span>sgr0<span class="k">)</span>
+<span class="nv">ccbold</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span>tput<span class="w"> </span>bold<span class="k">)</span>
+<span class="nv">ccgreen</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span>tput<span class="w"> </span>setaf<span class="w"> </span><span class="m">2</span><span class="k">)</span>
+<span class="nv">ccred</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span>tput<span class="w"> </span>setaf<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+<span class="nv">ccso</span><span class="o">=</span><span class="k">$(</span>shell<span class="w"> </span>tput<span class="w"> </span>smso<span class="k">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="uv_cli.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Modern Python CLI</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="numba.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Numba</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, TnT
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Learn UV</a><ul>
+<li><a class="reference internal" href="#basics-commands-for-uv-for-your-daily-work-on-python-projects">Basics Commands for uv for your daily work on Python projects</a></li>
+<li><a class="reference internal" href="#advanced-commands">Advanced Commands</a></li>
+<li><a class="reference internal" href="#link-to-our-squeleton">Link to our squeleton</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/tabs.js?v=3ee01567"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    </body>
+</html>
