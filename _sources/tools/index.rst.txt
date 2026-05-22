@@ -8,6 +8,8 @@ All the tools tips
    :maxdepth: 1
 
    snowflake.rst
+   free_apps.rst
+   fast_stack_forge.rst
 
 .. toctree::
    :caption: Theorical courses
